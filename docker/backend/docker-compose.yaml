@@ -1,0 +1,27 @@
+## BUILD (BACKEND AND DB)
+
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=docker-reoit-ecommerce
+      - MYSQL_ROOT_PASSWORD=Reo.2640441
+    ports:
+      - '3307:3306'
+    expose:
+      - 3306
+
+  backend:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+    ports:
+      - 8080:8080
+      
+## docker compose -p viettaiit up -d : tao 1 image
