@@ -1,6 +1,6 @@
 ## BUILD (BACKEND, DB, FRONTEND)
 
-version: '3.8'
+version: '3.1'
 services:
   db:
     image: mysql:8.0
@@ -11,8 +11,6 @@ services:
       - MYSQL_ROOT_PASSWORD=Reo.2640441
     ports:
       - '3307:3306'
-    volumes:
-      - ./mysql_init:/docker-entrypoint-initdb.d
     expose:
       - 3306
 
@@ -22,8 +20,6 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     container_name: backend
-    depends_on:
-      - db
     environment:
       - DB_HOST=db
       - DB_PORT=3306
@@ -32,9 +28,12 @@ services:
       - 8080:8080
     expose:
       - 8080
+    depends_on:
+      - db
 
   frontend:
     image: nginx:1.25.3 
+    container_name: frontend
     ports:
       - 80:80 ## port trai port mapping frontend , port phai port frontend docker
     volumes:
