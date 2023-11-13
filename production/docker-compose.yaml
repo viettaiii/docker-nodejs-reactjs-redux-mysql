@@ -24,6 +24,7 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
       - FRONTEND_CLIENT_URL=http://localhost
+      - BACKEND_URL=http://localhost:8080
     ports:
       - 8080:8080
     expose:
@@ -34,6 +35,8 @@ services:
   frontend:
     image: nginx:1.25.3 
     container_name: frontend
+    environment:
+      - REACT_APP_BACKEND_URL=/
     ports:
       - 80:80 ## port trai port mapping frontend , port phai port frontend docker
     volumes:
