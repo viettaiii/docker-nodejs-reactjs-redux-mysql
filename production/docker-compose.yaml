@@ -11,6 +11,8 @@ services:
       - MYSQL_ROOT_PASSWORD=Reo.2640441
     ports:
       - '3307:3306'
+    volumes:
+      - ./volume-ecommerce.sql:/docker-entrypoint-initdb.d/dump.sql
     expose:
       - 3306
 

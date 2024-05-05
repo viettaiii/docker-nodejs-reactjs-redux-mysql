@@ -6,7 +6,7 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      - MYSQL_DATABASE=docker-reoit-ecommerce
+      - MYSQL_DATABASE=reoit-ecommerce
       - MYSQL_ROOT_PASSWORD=Reo.2640441
     ports:
       - '3307:3306'
