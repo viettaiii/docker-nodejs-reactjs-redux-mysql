@@ -1,0 +1,5 @@
+// BACKGROUND GRADIENT
+@mixin background-gradient() {
+  background: linear-gradient(180deg, #141414 0%, #202022 50%, #47474f 100%);
+}
+

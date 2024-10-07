@@ -1,0 +1,8 @@
+@each $color, $value in $theme-gradient-colors {
+  .Toastify__toast-theme--#{$color} {
+    background: theme-gradient-color($color);
+  }
+  .Toastify__progress-bar--#{$color} {
+    background-color: $primary;
+  }
+}

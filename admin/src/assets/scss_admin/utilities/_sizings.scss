@@ -1,0 +1,11 @@
+@each $size, $value in $sizes {
+  .w-#{$size} {
+    width: $value !important;
+  }
+  .min-w-#{$size} {
+    min-width: $value !important;
+  }
+  .max-w-#{$size} {
+    min-width: $value !important;
+  } 
+}

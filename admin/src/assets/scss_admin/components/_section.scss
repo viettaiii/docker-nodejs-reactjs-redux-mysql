@@ -1,0 +1,10 @@
+.section {
+  @include shadow;
+  padding: 24px 17px;
+  min-height: 100px;
+  border-radius: 10px;
+  border: 1px solid $gray-300;
+  margin-bottom: 20px;
+  @include flex-center-between;
+
+}

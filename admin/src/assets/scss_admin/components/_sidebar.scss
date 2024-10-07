@@ -1,0 +1,32 @@
+.sidebar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  height: 100vh;
+  @include shadow;
+  @include media-breakpoint-down(lg) {
+    & {
+      position: fixed;
+      top: 60px;
+    }
+  }
+  .items {
+    @include flex-column($gap: 5px);
+    .item {
+      @include flex-gap($gap: 8px);
+      padding: 4px 10px;
+      @include flex-center;
+    }
+
+    .sub-items {
+      margin-top: -10px;
+      margin-left: 10px;
+
+      li {
+        padding: 3px 4px;
+      }
+    }
+  }
+}

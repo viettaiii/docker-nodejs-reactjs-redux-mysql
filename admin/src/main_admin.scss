@@ -1,0 +1,20 @@
+.main-content {
+  display: flex;
+
+  .sidebar {
+    width: 250px;
+  }
+  .navbar {
+    flex: 1;
+  }
+}
+
+.login-admin__form {
+  width: 300px;
+  margin: 200px auto;
+  background-color: white;
+  box-shadow: 0px 0px 6px 0px rgba(50, 50, 93, 0.15),
+    1px 1px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+}

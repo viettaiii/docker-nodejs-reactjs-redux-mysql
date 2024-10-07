@@ -1,0 +1,110 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/scrollbar";
+@import "./assets/scss/";
+// SCSS COMPONENTS
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Open+Sans:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+body {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    outline: 1px solid slategrey;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// BREAKPOINTS
+@include media-breakpoint-down(sm) {
+  .max-sm-none {
+    display: none !important;
+  }
+
+  .max-sm-display {
+    display: flex !important;
+  }
+  // SPACES
+}
+@include media-breakpoint-down(md) {
+  .max-md-none {
+    display: none !important;
+  }
+  .max-md-display {
+    display: flex !important;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .max-lg-none {
+    display: none !important;
+  }
+  .max-lg-display {
+    display: flex !important;
+  }
+}
+@include media-breakpoint-down(xl) {
+  .max-xl-none {
+    display: none !important;
+  }
+  .max-xl-display {
+    display: flex !important;
+  }
+}
+@include media-breakpoint-down(xxl) {
+  .max-xxl-none {
+    display: none !important;
+  }
+  .max-xxl-display {
+    display: flex !important;
+  }
+}
+
+.container {
+  max-width: 1349px;
+}
+
+.hover-color-secondary {
+  transition: all 0.2s linear;
+  &:hover {
+    color: $secondary !important;
+    cursor: pointer;
+  }
+
+  &.active {
+    color: $secondary !important;
+  }
+}
+
+.hover-bg-secondary {
+  @include hover-bg-secondary;
+}
+
+.hover-color-secondary {
+  @include hover-color-secondary;
+}
+
+a[href] {
+  text-decoration: none;
+  color: $black;
+  color: inherit;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+// Custom styles toast

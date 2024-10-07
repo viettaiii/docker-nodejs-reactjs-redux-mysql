@@ -1,0 +1,43 @@
+.cart {
+  .top {
+    border: 1px solid $gray-300;
+    border-radius: 10px;
+    overflow: hidden;
+    @include media-breakpoint-down(lg) {
+      border-color: transparent;
+    }
+    .info {
+      border-radius: 10px 10px 0px 0px;
+      background: #f8f8f8;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+      padding: 12px;
+      h5 {
+        font-size: $px-16;
+        font-weight: bold;
+
+        margin: 0px;
+      }
+    }
+
+    .items {
+      padding: 17px 5px;
+      .left {
+        @include flex-gap($gap: 10px);
+
+        img {
+          max-width: 109px;
+          max-height: 109px;
+        }
+
+        div {
+          span,
+          small {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

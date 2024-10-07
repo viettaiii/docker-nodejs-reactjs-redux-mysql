@@ -1,0 +1,5 @@
+@each $type, $value in $grays {
+  .bg-gray-#{$type} {
+    background: $value;
+  }
+}

@@ -1,0 +1,41 @@
+
+.login {
+  &__fs-13 {
+    font-size: 13px;
+  }
+  background-color: rgb(0 0 0 / 1%);
+  &__breadcrumb {
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+  }
+
+  // login form
+  &__form {
+    @include flex-center;
+    margin-top: 80px;
+    .form {
+      width: 400px;
+      min-height: 370px;
+      padding: 10px;
+      box-shadow: 0px 0px 6px 0px rgba(50, 50, 93, 0.15),
+        1px 1px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+
+      .form-group {
+        .form-control {
+          &:focus {
+            box-shadow: none;
+          }
+          padding-left: 10px;
+          &::placeholder {
+            font-size: $px-12;
+          }
+        }
+
+       
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.select_options {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background-color: #fff;
+  height: 150px;
+  max-height: 150px;
+  overflow-y: scroll;
+  background-color: #fff;
+  box-shadow: -5px 6px 24px -6px rgba(0, 0, 0, 0.56);
+  @include box-shadow;
+  span {
+    font-size: $px-12;
+    @include transition;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: block;
+    &:hover {
+      background-color: $info;
+      color: $white;
+    }
+  }
+}

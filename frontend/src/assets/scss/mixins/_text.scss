@@ -1,0 +1,39 @@
+@mixin text-gradient() {
+  background: linear-gradient(to right, white 3%, #cf1512 76%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+@mixin triangle-before($top: 0%, $right: 0%) {
+  &::before {
+    position: absolute;
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    top: $top;
+    right: $right;
+    cursor: pointer;
+  }
+}
+@mixin triangle-after($top: 0%, $right: 0%, $width: 15%) {
+  ::after {
+    position: absolute;
+    content: "";
+    height: 18px;
+    background-color: transparent;
+    width: $width;
+    top: $top;
+    right: $right;
+  }
+}
+
+// Text break line 2
+@mixin text-eclipse($line: 2) {
+  font-size: $px-16;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

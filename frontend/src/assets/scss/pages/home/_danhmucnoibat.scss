@@ -1,0 +1,28 @@
+.danhmucnoibat {
+  .item {
+    background: #f1f1f1;
+    border-radius: 12px;
+    padding: 20px 10px;
+    margin: 0px 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    img {
+      transition: all 0.2s ease-in-out;
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+    &:hover {
+      background: linear-gradient(31deg, #1d1d1f 0%, #7d7d88 100%);
+      span {
+        color: $white;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    
+  }
+}

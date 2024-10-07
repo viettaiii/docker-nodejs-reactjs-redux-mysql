@@ -1,0 +1,17 @@
+.flex-center {
+  @include flex-center;
+}
+
+// COLUMN
+.flex-column-4 {
+  @include flex-column($gap: 4px);
+}
+.flex-column-8 {
+  @include flex-column($gap: 8px);
+}
+.flex-column-10 {
+  @include flex-column($gap: 10px);
+}
+.flex-column-12 {
+  @include flex-column($gap: 12px);
+}

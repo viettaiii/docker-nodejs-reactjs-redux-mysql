@@ -1,0 +1,29 @@
+@each $size, $value in $position-values {
+  .top-#{$size} {
+    top: $value;
+  }
+  .left-#{$size} {
+    left: $value;
+  }
+  .bottom-#{$size} {
+    bottom: $value;
+  }
+  .right-#{$size} {
+    right: $value;
+  }
+}
+
+.p-center-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.p-center-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.p-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

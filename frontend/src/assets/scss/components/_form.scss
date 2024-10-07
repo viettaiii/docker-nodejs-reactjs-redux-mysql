@@ -1,0 +1,46 @@
+.form {
+  width: 400px;
+  min-height: 150px;
+  padding: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(50, 50, 93, 0.15),
+    1px 1px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+
+  .form-group {
+    & .form-control {
+      margin-bottom: 10px;
+      &:focus {
+        box-shadow: 0 0 0 0.25rem rgb(20 20 20 / 0%);
+      }
+      padding-left: 10px;
+      &::placeholder {
+        font-size: $px-12;
+      }
+    }
+  }
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check:focus {
+  border-color: $gray-300 !important;
+  box-shadow: 0 0 0 0.25rem rgba(20, 20, 20, 0) !important;
+}
+
+.form-floating {
+  height: 40px;
+
+  & > .form-control,
+  & > .form-select {
+    height: 100%;
+    min-height: 100%;
+    padding: 4px 10px;
+  }
+
+  & > label {
+    height: 21px;
+    top: 10px;
+    padding: 0rem 0.75rem;
+    font-size: 14px;
+  }
+}

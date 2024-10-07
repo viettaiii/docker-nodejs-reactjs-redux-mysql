@@ -1,0 +1,27 @@
+.pagination {
+  @include flex-gap($gap: 6px);
+  .page-item {
+    width: 30px;
+    height: 30px;
+    @include flex-center;
+    .page-link {
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+      @include flex-center;
+      font-size: $px-14;
+      font-weight: 500;
+      border:1px solid $primary;
+      &:hover {
+        background-color: $primary !important;
+        color: $white;
+      }
+      @include transition;
+    }
+
+    &.active {
+      background-color: $primary;
+      border-radius: 10px;
+    }
+  }
+}

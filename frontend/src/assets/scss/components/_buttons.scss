@@ -1,0 +1,189 @@
+.btn {
+  font-size: $btn-font-size;
+  line-height: 1;
+  padding: 8px 22px;
+  font-weight: $font-weight-bold;
+  margin-right: 3px;
+  border-radius: 4px;
+  &.btn-icon {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+  }
+  &.btn-fw {
+    min-width: $button-fixed-width;
+  }
+  &.btn-xs {
+    font-size: $btn-font-size-xs;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  &.btn-sm {
+    font-size: $btn-font-size-sm;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &.btn-md {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: $btn-font-size-md;
+  }
+  &.btn-lg {
+    font-size: $btn-font-size-lg;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  /* Buttons with icon and text */
+  &.btn-icon-text {
+    .btn-icon-prepend {
+      margin-right: 0.5rem;
+    }
+    .btn-icon-append {
+      margin-left: 0.5rem;
+    }
+  }
+  &.btn-social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+
+  &.btn-social-icon-text {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+
+  &.btn-love,
+  &.btn-compare {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid $gray-200;
+    border-radius: 10px;
+    @include hover-primary-white($radius: 10px);
+    &.btn-icon {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+    }
+    &.btn-fw {
+      min-width: $button-fixed-width;
+    }
+    &.btn-sm {
+      font-size: $btn-font-size-sm;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    &.btn-md {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-size: $btn-font-size-md;
+    }
+    &.btn-lg {
+      font-size: $btn-font-size-lg;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+}
+
+/*social buttons*/
+@each $color, $value in $social-colors {
+  .btn-#{$color} {
+    @include social-button(social-color($color));
+  }
+  .btn-outline-#{$color} {
+    @include social-outline-button(social-color($color));
+  }
+}
+/* inverse buttons */
+@each $color, $value in $theme-colors {
+  .btn-#{$color}:not(.btn-light) {
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+    &:focus,
+    &:active {
+      background: dark($value, 10%);
+      border-color: $value;
+    }
+  }
+
+  .btn-outline-#{$color} {
+    &:hover,
+    &:focus,
+    &:active {
+      background: theme-gradient-color($color);
+      color: $white;
+    }
+  }
+}
+
+@each $color, $value in $theme-gradient-colors {
+  .btn-gradient-#{$color} {
+    @include button-gradient-variant($value);
+  }
+}
+
+// button quantity
+.button-quantity {
+  @include flex-gap($gap: 1px);
+  button {
+    @include transition;
+    margin: 0px;
+    &:hover {
+      background-color: $secondary;
+      color: $white;
+      border-color: $secondary;
+    }
+  }
+  span {
+    @include flex-center;
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 1px 5px;
+      @include flex-center;
+      text-align: center;
+      border-radius: 0px;
+      &:focus {
+        box-shadow: unset;
+      }
+    }
+  }
+
+  &.btn-sm {
+    button {
+      padding: 4px 10px;
+    }
+    span {
+      width: 50px;
+      height: 24px;
+    }
+  }
+
+  &.btn-md {
+    button {
+      padding: 8px 16px;
+    }
+    span {
+      width: 60px;
+      height: 32px;
+    }
+  }
+  &.btn-lg {
+    button {
+      padding: 12px 20px;
+    }
+    span {
+      width: 100px;
+      height: 40px;
+    }
+  }
+}

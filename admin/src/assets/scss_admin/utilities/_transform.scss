@@ -1,0 +1,5 @@
+@each $size, $value in $rotates {
+  .rotate-#{$size} {
+    transform: rotate($value);
+  }
+}

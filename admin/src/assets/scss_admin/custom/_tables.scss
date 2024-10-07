@@ -1,0 +1,55 @@
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid $primary;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  thead {
+    tr {
+      border-radius: 10px;
+      th {
+        background-color: $success;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-color: transparent;
+      }
+    }
+  }
+
+  tbody tr {
+    td {
+      background-color: $white;
+      border-color: transparent;
+      font-size: 0.8rem;
+      line-height: 28px;
+
+      .selling,
+      .verified {
+        background-color: #00800033;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $success;
+        padding: 2px 8px;
+        border-radius: 5px;
+        width: 71px;
+        height: 21px;
+      }
+      .sold-out,
+      .unverified {
+        background-color: #ff000042;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $danger;
+        padding: 2px 8px;
+        border-radius: 14px;
+        width: 71px;
+        height: 21px;
+      }
+    }
+  }
+}

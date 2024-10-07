@@ -1,0 +1,9 @@
+[submodule "admin"]
+	path = admin
+	url = https://github.com/viettaiii/admin-ecommerce-mysql
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/viettaiii/frontend-viettaiit-ecommerce
+[submodule "backend"]
+	path = backend
+	url = https://github.com/viettaiii/backend-viettaiit-ecommerce

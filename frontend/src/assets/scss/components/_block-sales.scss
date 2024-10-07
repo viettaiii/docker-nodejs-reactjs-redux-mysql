@@ -1,0 +1,39 @@
+//========== BLOCK SALES =============
+.block-sale {
+  background: linear-gradient(180deg, #bf1e2e 0%, #cc0c09 50%, #fa2c29 100%);
+  border-radius: 20px;
+  &__top {
+    @include flex-between;
+    padding: 20px;
+    @include media-breakpoint-down(md) {
+      @include flex-column($gap: 10px);
+    }
+    &__left {
+      @include flex-center();
+      p {
+        margin: 0px;
+        font-size: $px-26;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+    &__right {
+      @include flex-gap($gap: 10px);
+
+      &__one {
+        @include flex-column($gap: 1px);
+        align-items: center;
+        color: $white;
+        background-color: $black;
+        border-radius: 5px;
+        padding: 2px 10px;
+        small {
+          font-size: $px-12;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@mixin flex-center-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column($gap: 4px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-gap($gap: 4px) {
+  display: flex;
+  gap: $gap;
+}

@@ -1,0 +1,230 @@
+.product-item {
+  position: relative;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  @include box-shadow;
+  margin-top: 16px;
+  &__image {
+    width: 280px;
+    height: 280px;
+    display: block;
+    overflow: hidden;
+    img {
+      @include transition;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .discount {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: -7px;
+    background: $secondary;
+    color: $white;
+    font-size: $px-13;
+    padding: 2px 5px;
+    border-radius: 10px 20px 20px 0px;
+    font-weight: bold;
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0px;
+      top: 22px;
+      border-style: solid;
+      border-width: 0px 5px 5px 5px;
+      border-color: transparent transparent #99101d transparent;
+      transform: rotate(45deg);
+    }
+  }
+  .pay {
+    position: absolute;
+    z-index: 1;
+    color: $white;
+    left: 0px;
+    top: 51%;
+    font-size: $px-12;
+    padding: 2px 5px;
+    background: linear-gradient(
+      180deg,
+      $secondary 0%,
+      #da4d2e 50%,
+      #ba2604 100%
+    );
+    border-radius: 10px 4px 4px 0px;
+  }
+  .warranty {
+    position: absolute;
+    color: $white;
+    left: 0px;
+    top: 42%;
+    background: linear-gradient(180deg, #e8684a 0%, #da4d2e 50%, #ba2604 100%);
+    z-index: 1;
+    font-size: $px-12;
+    padding: 2px 5px;
+    border-radius: 0px 4px 4px 0px;
+  }
+ 
+
+  &__title {
+    font-size: $px-16;
+    height: 48px;
+    @include text-eclipse;
+    @include hover-text-secondary;
+    @include media-breakpoint-down(lg) {
+      font-size: $px-14;
+    }
+  }
+  &__price {
+    @include flex-column($gap: 1px);
+    &-old {
+      text-decoration: line-through;
+      font-size: $px-13;
+      color: $gray-300;
+    }
+    &-new {
+      font-size: $px-18;
+      font-weight: bold;
+      color: $secondary;
+    }
+  }
+  &__icon-setting {
+    @include flex-center;
+    background: $black;
+    font-size: $px-20;
+    color: $white;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+    @include hover-bg-secondary;
+  }
+  &__desc {
+    padding: 4px 6px;
+    background-color: $gray-300;
+    font-size: $px-13;
+    border-radius: 5px;
+    @include text-eclipse;
+  }
+  &__count {
+    @include flex-center;
+    background-color: rgb(255, 207, 180);
+    border-radius: 50px;
+    height: 20px;
+    position: relative;
+    svg {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      font-size: $px-14;
+    }
+    .sold {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      color: $white;
+      font-size: $px-14;
+    }
+    .countdown {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80%;
+      background: linear-gradient(90deg, #f53d2d, #f63);
+      z-index: 0;
+      height: 100%;
+      border-radius: 50px;
+    }
+  }
+  &__discount {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 0;
+    background: $secondary;
+    color: $white;
+    font-size: $px-13;
+    padding: 2px 5px;
+    border-radius: 0px 20px 20px 0px;
+    font-weight: bold;
+    &::before {
+      position: absolute;
+      content: "";
+      left: -6px;
+      top: 0px;
+      background: linear-gradient(180deg, #14141403, #bf1e2e, 50%, #14141475);
+      border-top-left-radius: 10px;
+      height: 100%;
+      width: 6px;
+    }
+  }
+  &__pay {
+    position: absolute;
+    z-index: 1;
+    color: $white;
+    left: 0;
+    top: 47%;
+    font-size: $px-12;
+    padding: 2px 5px;
+    background: linear-gradient(
+      180deg,
+      $secondary 0%,
+      #da4d2e 50%,
+      #ba2604 100%
+    );
+    border-radius: 0px 4px 4px 0px;
+  }
+  &__warranty {
+    position: absolute;
+    top: 52%;
+    color: $white;
+    left: 0;
+    background: linear-gradient(180deg, #e8684a 0%, #da4d2e 50%, #ba2604 100%);
+    z-index: 1;
+    font-size: $px-12;
+    padding: 2px 5px;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  &__action-button {
+    position: absolute;
+    z-index: 1;
+    top: 16%;
+    right: 10px;
+    @include flex-column($gap: 10px);
+
+    a {
+      @include flex-center;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid $gray-200;
+      @include hover-primary-white($radius: 50%);
+      position: relative;
+      &::before {
+        content: attr(title);
+        position: absolute;
+        top: 50%;
+        right: calc(100% + 10px);
+        padding: 3px 7px;
+        background: #666;
+        color: #fff;
+        border-radius: 5px;
+        font-size: $px-13;
+        white-space: nowrap;
+        display: inline-block;
+        line-height: initial;
+        transform: translate(0, -50%);
+        display: none;
+      }
+      &:hover::before {
+        display: block;
+      }
+    }
+  }
+}

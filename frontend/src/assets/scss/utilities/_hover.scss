@@ -1,0 +1,14 @@
+.hover-bg-secondary {
+  @include hover-bg-secondary;
+}
+
+.hover-bg-gray-25 {
+  @include hover-bg-gray-25;
+}
+
+.hover-none {
+  &:hover {
+    opacity: unset !important;
+    cursor: default !important;
+  }
+}

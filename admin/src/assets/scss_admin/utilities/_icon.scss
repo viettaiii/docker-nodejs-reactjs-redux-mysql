@@ -1,0 +1,6 @@
+@each $size, $value in $icons-sizes {
+  .icon-#{$size} {
+    font-size: $value;
+    cursor: pointer;
+  }
+}

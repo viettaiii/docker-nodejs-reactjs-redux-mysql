@@ -1,0 +1,12 @@
+@each $color, $value in $theme-gradient-colors {
+  .btn-gradient-#{$color} {
+    background: theme-gradient-color($color);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .bg-#{$color} {
+    background: $color !important;
+    color: $white!important;
+  }
+}

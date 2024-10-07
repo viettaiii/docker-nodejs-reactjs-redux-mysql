@@ -1,0 +1,33 @@
+// FLEX
+
+@mixin flex-center($gap: 0px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+  }
+  
+  @mixin flex-between($align: center) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+  }
+  
+  @mixin flex-column($gap: 4px) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flex-gap($gap: 4px) {
+    display: flex;
+    flex-direction: unset;
+    align-items: center;
+    gap: $gap;
+  }
+  
+  @mixin flex-wrap($gap: 4px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+  }

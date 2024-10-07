@@ -1,0 +1,7 @@
+.hover-color-success {
+  @include transition;
+  &:hover {
+    color: $success;
+    cursor: pointer;
+  }
+}

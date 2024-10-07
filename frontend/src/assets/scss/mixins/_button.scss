@@ -1,0 +1,43 @@
+
+@mixin social-button($color) {
+  background: $color;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background: darken($color, 10%);
+    color: $white;
+  }
+  @include transition(opacity 0.3s ease);
+}
+@mixin social-outline-button($color) {
+  border: 1px solid $color;
+  color: $color;
+  &:hover {
+    background: $color;
+    color: $white;
+  }
+  @include transition(opacity 0.3s ease);
+}
+
+@mixin button-gradient-variant($value) {
+  background: $value;
+  border: 0;
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    background: $value;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &:not(.btn-gradient-light) {
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+  }
+  @include transition(opacity 0.3s ease);
+}

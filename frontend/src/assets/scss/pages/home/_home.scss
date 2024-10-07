@@ -1,0 +1,117 @@
+
+.home {
+  //========== SLIDER TOP =============
+  &__slider {
+    height: 420px;
+    @include media-breakpoint-down(lg) {
+      height: 215px;
+    }
+    @include media-breakpoint-down(md) {
+      height: 115px;
+    }
+    @include flex-between;
+    .swiper-button-prev {
+      background-color: $gray-900;
+      color: #fff;
+      border-radius: 0px 4px 4px 0px;
+      width: 30px;
+      left: 0px;
+      height: 27px;
+      cursor: pointer;
+      display: none;
+      transition: all 0.4s ease-in-out;
+      &::after {
+        font-size: $px-14;
+      }
+    }
+    .swiper-button-next {
+      background-color: $gray-900;
+      color: #fff;
+      border-radius: 4px 0px 0px 4px;
+      width: 30px;
+      right: 0px;
+      height: 27px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      display: none;
+      &::after {
+        font-size: $px-14;
+      }
+    }
+    &:hover {
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: flex;
+      }
+    }
+  }
+  //========== PROMO BOXES =============
+  .promo-box {
+    margin-top: 25px;
+    &__item {
+      padding: 10px;
+      @include media-breakpoint-down(xl) {
+        height: 85px;
+      }
+      @include media-breakpoint-down(lg) {
+        height: 145px;
+      }
+      border-radius: 10px;
+      margin-bottom: 5px;
+      transition: all 0.1s ease-in-out;
+      @include media-breakpoint-down(xl) {
+        & {
+          max-width: 1200px;
+        }
+      }
+      @include flex-gap($gap: 10px);
+      justify-content: center;
+      @include media-breakpoint-down(lg) {
+        @include flex-column($gap: 10px);
+      }
+      -webkit-box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+      -moz-box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+      box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+      &__left {
+        width: 50px;
+        height: 50px;
+      }
+
+      &__right {
+        @include flex-column($gap: 5px);
+        small {
+          font-size: $px-16;
+          font-weight: bold;
+          display: block;
+          @include media-breakpoint-down(xl) {
+            font-size: $px-14;
+          }
+        }
+        span {
+          font-weight: 400;
+          font-size: $px-14;
+          @include media-breakpoint-down(xl) {
+            font-size: $px-12;
+          }
+        }
+      }
+    }
+  }
+
+  //========== SECTION =============
+  .section {
+    &__item {
+      border-radius: 20px;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-6px);
+        -webkit-box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+        -moz-box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+        box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.39);
+      }
+    }
+  }
+
+  
+}

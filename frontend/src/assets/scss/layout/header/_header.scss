@@ -1,0 +1,327 @@
+
+
+.header {
+    height: $header-height;
+    @include background-gradient;
+    position: relative;
+    border-bottom: 1px solid $gray-500;
+    &::after {
+      position: absolute;
+      top: 64px;
+      left: 0%;
+      width: 100%;
+      background-color: $gray-500;
+      height: 0.5px;
+      content: "";
+    }
+  
+    @include media-breakpoint-down(lg) {
+      &::after {
+        display: none;
+      }
+    }
+    .header-top {
+      padding: 2px 0px;
+      @include flex-between;
+      gap: 20px;
+      @include media-breakpoint-down(lg) {
+        & {
+          padding: 0px 30px;
+        }
+      }
+      color: $white;
+      .left {
+        @include flex-gap($gap: 4px);
+        a {
+          font-size: $px-40 !important;
+          color: $white;
+          font-weight: bold;
+          @include media-breakpoint-down(lg) {
+            & {
+              font-size: $px-26 !important;
+            }
+          }
+        }
+        cursor: pointer;
+      }
+  
+      .right {
+        @include flex-center($gap: 22px);
+        .item {
+          @include flex-center($gap: 10px);
+          position: relative;
+  
+          cursor: pointer;
+          span {
+            @include flex-column($gap: 4px);
+            transition: all 0.2s ease-in-out;
+            @include media-breakpoint-down(lg) {
+              & {
+                display: none;
+              }
+            }
+            &:hover {
+              opacity: 0.5;
+            }
+            .title {
+              font-size: $px-10;
+              font-weight: 300;
+            }
+            small {
+              font-size: $px-12;
+            }
+          }
+          .circle {
+            @include position-top-right($top: -21%, $right: 60%);
+            background-color: red;
+            border-radius: 50%;
+            min-width: 15px;
+            height: 15px;
+            font-size: $px-14;
+            padding: 1px;
+            @include flex-center;
+          }
+  
+          .frame-hover {
+            .account {
+              position: relative;
+  
+              @include triangle-before($top: -20%, $right: 8%);
+              @include triangle-after($top: -18%, $right: 10%, $width: 30%);
+              &__item {
+                margin: 2px;
+                padding: 5px;
+                @include flex-gap($gap: 6px);
+                @include hover-primary-white;
+                small {
+                  font-size: $px-14;
+                }
+              }
+            }
+            .cart {
+              padding: 10px;
+              position: relative;
+              @include triangle-before($top: -8%, $right: 8%);
+              @include triangle-after($top: -6%, $right: 2%, $width: 20%);
+              &__none {
+                @include flex-column;
+              }
+              &__display {
+                @include flex-column($gap: 0px);
+                max-height: 183px;
+                overflow-y: scroll;
+                .cart__item {
+                  border-top: 1px solid $gray-700;
+                  padding: 10px 0px;
+                  @include flex-gap($gap: 10px);
+                  .left {
+                    width: 65px;
+                    height: 65px;
+                  }
+                  .right {
+                    flex: 1;
+                    @include flex-column($gap: 4px);
+                    div {
+                      width: 100%;
+                      @include flex-between($align: unset);
+                      .icon-close {
+                        height: 15px;
+                        padding: 4px;
+                        @include hover-text-secondary;
+                      }
+                      .name {
+                        font-size: $px-14;
+                        @include hover-text-secondary;
+                      }
+                      span {
+                        @include flex-center;
+                        flex-direction: unset;
+                      }
+  
+                      .price {
+                        color: $red;
+                        font-size: $px-12;
+                      }
+  
+                      small {
+                        display: flex;
+                        text-align: right;
+                      }
+                    }
+                  }
+                }
+              }
+              .total {
+                border-top: 1px solid $gray-700;
+                @include flex-between;
+                padding: 6px 8px;
+  
+                .left {
+                  flex-direction: column;
+                  small {
+                    cursor: default;
+                    &:last-child {
+                      color: $secondary;
+                      font-weight: 800;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-bottom {
+      max-height: 40px;
+  
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+      .items {
+        @include flex-between;
+        height: 100%;
+        .item {
+          list-style: none;
+          @include flex-center($gap: 6px);
+          color: $white;
+          padding: 7px 15px;
+          margin-top: 5px;
+          position: relative;
+          cursor: pointer;
+          z-index: 9;
+          .link {
+            display: block;
+            font-size: $px-16;
+            color: $white;
+            text-decoration: none;
+            font-weight: 400;
+            white-space: nowrap;
+            position: relative; // &.active {
+            //   position: relative;
+            //   &::before {
+            //     position: absolute;
+            //     content: "";
+            //     top: 87%;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     background-color: #fff;
+            //     width: 36%;
+            //     height: 2px;
+            //   }
+            // }
+            &::before {
+              position: absolute;
+              content: "";
+              top: 87%;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: #fff;
+              width: 0%;
+              height: 2px;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover::before {
+              width: 36%;
+            }
+          }
+          .submenu-first {
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            min-width: 255px;
+            background-color: $white;
+            box-shadow: $box-shadow-lg;
+            padding-left: 0px;
+            .sub-item {
+              list-style: none;
+              padding: 7px 15px;
+              border-bottom: 1px solid $gray-400;
+              position: relative;
+              cursor: pointer;
+              z-index: 9;
+              .sub-link {
+                text-decoration: none;
+                font-weight: 400;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              .icon {
+                margin-left: 130px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $black;
+                padding: 2px 4px;
+              }
+              .sub-menu-2 {
+                position: absolute;
+                color: $black;
+                right: -200px;
+                top: 0%;
+                z-index: 8;
+                width: 200px;
+                background-color: $white;
+                box-shadow: $box-shadow-lg;
+                border-radius: 0px 10px 10px 0px;
+  
+                .link-2 {
+                  padding: 5px 17px;
+                  display: block;
+                  text-decoration: none;
+                  border-bottom: 1px solid $gray-400;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+  
+          .iphone-submenu {
+            position: absolute;
+            top: 100%;
+            display: flex;
+            left: -227%;
+            min-width: 255px;
+  
+            background-color: $white;
+            box-shadow: $box-shadow-lg;
+            padding-left: 0px;
+            border-radius: 0px 0px 10px 10px;
+            .iphone-sub-item {
+              width: 309px;
+              padding: 7px 15px;
+              display: flex;
+              flex-direction: column;
+              gap: 0px;
+              cursor: pointer;
+              a {
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              span {
+                color:$black;
+              }
+              .iphone-sub-link {
+                margin-bottom: 20px;
+              }
+              .iphone-sub-item-2 {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+  
+                span {
+                  color: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,21 @@
+@each $size, $value in $sizing {
+  .h-#{$size} {
+    height: $value !important;
+  }
+  .w-#{$size} {
+    width: $value !important;
+  }
+  .max-h-#{$size} {
+    max-height: $value !important;
+  }
+  .max-w-#{$size} {
+    max-width: $value !important;
+  }
+
+  .min-h-#{$size} {
+    min-height: $value !important;
+  }
+  .min-w-#{$size} {
+    min-width: $value !important;
+  }
+}

@@ -1,0 +1,11 @@
+
+.frame-hover {
+  @include position-top-right($top: 140%, $right: -10%);
+  z-index: 10;
+  width: 215px;
+  background-color: white;
+  padding: 4px;
+  color: $black;
+  box-shadow: $box-shadow-lg;
+  border-radius: $border-radius-lg;
+}

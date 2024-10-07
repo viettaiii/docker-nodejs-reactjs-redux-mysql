@@ -1,0 +1,131 @@
+.product-query {
+  .sub-categories {
+    @include flex-center;
+    margin-top: 20px;
+    padding: 0px 200px;
+    @include media-breakpoint-down(lg) {
+      & {
+        padding: 0px 100px;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      & {
+        padding: 0px 50px;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      & {
+        padding: 0px 10px;
+      }
+    }
+    .items {
+      @include flex-gap($gap: 10px);
+      .item {
+        width: 135px;
+        height: 119px;
+        @include flex-center;
+        flex-direction: column;
+        cursor: pointer;
+        span {
+          width: 80px;
+          height: 80px;
+          background-color: $gray-300;
+          border-radius: 50%;
+          @include flex-center;
+          @include transition;
+
+          img {
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        small {
+          @include transition;
+          margin-top: 5px;
+        }
+
+        @include transition;
+
+        &:hover {
+          transform: translateY(-5px);
+
+          span {
+            background-color: $primary;
+          }
+          small {
+            color: $secondary;
+          }
+        }
+
+        &.active {
+          transform: translateY(-5px);
+
+          span {
+            background-color: $primary;
+          }
+          small {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  .bar-query {
+    .wrapper {
+      background-color: $gray-300;
+      border-radius: 10px;
+      padding: 10px;
+      @include flex-between;
+      align-items: center;
+      font-size: $px-14;
+      .left {
+        border: 1px solid $gray-100;
+        padding: 4px 14px;
+        cursor: pointer;
+
+        border-radius: 10px;
+        @include flex-gap($gap: 4px);
+        position: relative;
+        @include transition;
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+        small {
+          @include position-top-left($top: -15%, $left: -5%);
+          border-radius: 50%;
+          background-color: $secondary;
+          padding: 0px 5px;
+          color: $white;
+          font-size: $px-11;
+        }
+      }
+
+      .right {
+        @include flex-gap($gap: 10px);
+        align-items: center;
+        font-size: $px-14;
+        .item {
+          border: 1px solid $gray-100;
+          padding: 4px 14px;
+          cursor: pointer;
+          font-size: $px-14;
+          border-radius: 10px;
+          @include flex-gap($gap: 4px);
+          @include transition;
+          &:hover {
+            background-color: $primary;
+            color: $white;
+          }
+
+          &.active {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
