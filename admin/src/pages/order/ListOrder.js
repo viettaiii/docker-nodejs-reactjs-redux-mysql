@@ -1,58 +1,22 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
-  Button,
   Container,
   Form,
-  Image,
-  Modal,
-  OverlayTrigger,
-  Pagination,
   Table,
-  Tooltip,
+  Button
 } from "react-bootstrap";
-import { useDebounce } from "@uidotdev/usehooks";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteManyProduct,
-  deleteProduct,
-  getProducts,
-  setQueryProduct,
-} from "../../features/product/productSlice";
+
 
 import { formatCurrency, formatDate } from "../../utils/format";
-import Section from "../../components/Section";
-import OffvancasAddProduct from "../../components/Offcanvas/OffcanvasAddProduct";
-import { setSpinner } from "../../features/spinnerSlice";
-import OffvancasEditProduct from "../../components/Offcanvas/OffcanvasEditProduct";
-import OffvancasViewProduct from "../../components/Offcanvas/OffcanvasViewProduct";
+import { getOrderList } from "../../features/order/orderSlice";
 
-const optionsPrice = [
-  {
-    title: "Thấp đến Cao",
-    value: "price",
-  },
-  {
-    title: "Cao đến Thấp",
-    value: "-price",
-  },
-  {
-    title: "Ngày tạo mới đây",
-    value: "createdAt",
-  },
-  {
-    title: "Ngày tạo cũ nhất",
-    value: "-createdAt",
-  },
-  {
-    title: "Ngày sửa mới đây",
-    value: "updatedAt",
-  },
-  {
-    title: "Ngày sửa cũ nhất",
-    value: "-updatedAt",
-  },
-];
 function ListOrder() {
+  const dispatch = useDispatch();
+  const { orders } = useSelector((store) => store.order);
+  useEffect(() => {
+    dispatch(getOrderList());
+  }, []);
 
   return (
     <Container className="products">
@@ -73,20 +37,62 @@ function ListOrder() {
                   name="selectAll"
                 />
               </th>
-              <th>Tên</th>
-              <th>Loại</th>
-              <th>Nhà cung cấp</th>
-              <th>Giá</th>
-              <th>Giá sale</th>
-              <th>Tồn kho</th>
-              <th>Status</th>
-              <th>Xem</th>
-              <th>Ngày tạo</th>
-              <th>Ngày sửa</th>
-              <th>Actions</th>
+              <th className="text-center">Đơn hàng</th>
+              <th className="text-center">Khach Hang</th>
+              <th className="text-center">Ngày</th>
+              <th className="text-center">Địa chỉ</th>
+              <th className="text-center">Giá trị đơn hàng</th>
+              <th className="text-center">Status</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+          {orders && orders.length <= 0 ? (
+          <div colSpan={5} className=" position-absolute p-center-x mt-3">
+            Không có đơn hàng nào.
+          </div>
+        ) : (
+          orders.map((order, index) => (
+            <tr className="text-center" key={index}>
+              <td
+                className="align-middle text-info cursor p-2"
+              >
+                <Form.Check
+                  type="checkbox"
+                  name="selectAll"
+                />
+              </td>
+              <td
+                className="align-middle text-info cursor p-2"
+              >
+                <span className="text-nowrap">#{index + 1}</span>
+              </td>
+             
+              <td className="align-middle p-2">
+              {order.user.email}
+              </td>
+              <td className="align-middle p-2">
+                {formatDate(order.createdAt)}
+              </td>
+              <td className="align-middle p-2">
+                {order.address.residence +
+                  ", " +
+                  order.address.province +
+                  ", " +
+                  order.address.district +
+                  ", " +
+                  order.address.ward +
+                  ", "}
+              </td>
+              <td className="align-middle p-2">
+                {formatCurrency(order.orderTotal)}
+              </td>
+              <td className="align-middle p-2">
+                {createBtnStatus(order.status)}
+              </td>
+            </tr>
+          ))
+        )}
+          </tbody>
         </Table>
       </div>
     </Container>
@@ -94,3 +100,18 @@ function ListOrder() {
 }
 
 export default ListOrder;
+
+
+const createBtnStatus = (status) => {
+  if (status === "pending")
+    return (
+      <Button variant="danger btn-xs w-50 fs-12" className=" text-uppercase">
+        
+        <span className="flex-center" >{status}</span>
+      </Button>    );
+  return (
+    <Button variant="success btn-xs w-50 fs-12" className=" text-uppercase ">
+      <span className="flex-center" >{status}</span>
+    </Button>
+  );
+};

@@ -10,6 +10,7 @@ import spinnerSlice from "./features/spinnerSlice";
 import userSlice from "./features/user/userSlice";
 import authSlice from "./features/auth/authSlice";
 import loadingCompSlice from "./features/loadingCompSlice";
+import orderSlice from "./features/order/orderSlice";
 
 const persistConfig = {
   key: "root",
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   auth: authSlice,
   loadingComp: loadingCompSlice,
   user: userSlice,
+  order: orderSlice,
   spinner: spinnerSlice,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);

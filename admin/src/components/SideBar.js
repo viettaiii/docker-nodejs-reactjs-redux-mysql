@@ -34,11 +34,6 @@ const sidebarMenu = [
       },
     ],
   },
-  {
-    icon: "mdi mdi-view-dashboard",
-    text: "Dashboard",
-    to: "/order",
-  },
 ];
 
 function Sidebar() {

@@ -209,7 +209,7 @@ function CheckOut() {
                             className="border border-info rounded-5"
                           />
                           <div className="px-1 text-size-12 rounded-circle w-5 h-5 d-inline-block position-absolute top--10 right-1 bg-info text-white">
-                            4
+                            {item.qty}
                           </div>
                         </div>
                         <span className="fw-light text-size-14">

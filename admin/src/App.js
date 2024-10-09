@@ -107,7 +107,7 @@ function App() {
             {isAdmin && <NavBar />}
             <Routes>
               <Route
-                path="/admin"
+                path="/"
                 element={
                   <ProtectedRoute isAdmin={isAdmin}>
                     <Dashboard />
